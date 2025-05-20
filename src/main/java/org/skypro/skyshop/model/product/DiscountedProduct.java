@@ -1,5 +1,6 @@
 package org.skypro.skyshop.model.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.UUID;
@@ -22,6 +23,7 @@ public class DiscountedProduct extends Product implements Searchable {
         return super.toString() + ": " + getPrice() + " (скидка: " + discountPersent + " %)";
     }
 
+    @JsonIgnore
     @Override
     public String getSearchTerm() {
         return getNameProduct();

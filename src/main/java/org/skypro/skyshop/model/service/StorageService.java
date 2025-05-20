@@ -37,6 +37,10 @@ public class StorageService {
         return articles.values();
     }
 
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(products.get(id));
+    }
+
     private void loadTestData() {
 
         Product banan = new SimpleProduct(UUID.randomUUID(), "банан", 123);
