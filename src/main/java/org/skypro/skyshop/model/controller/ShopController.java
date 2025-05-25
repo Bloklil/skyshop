@@ -50,5 +50,4 @@ public class ShopController {
     public UserBasket getUserBasket(){
         return basketService.getUserBasket();
     }
-
 }
