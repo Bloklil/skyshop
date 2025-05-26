@@ -1,5 +1,6 @@
 package org.skypro.skyshop.model.backet;
 
+import org.skypro.skyshop.model.product.Product;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -14,6 +15,10 @@ public class ProductBasket {
 
     public void addProduct(UUID id) {
         basket.merge(id, 1, Integer::sum);
+    }
+
+    public void addProductTestClass(Product product) {
+        basket.merge(product.getId(), 1, Integer::sum);
     }
 
     public Map<UUID, Integer> getAllProducts() {
