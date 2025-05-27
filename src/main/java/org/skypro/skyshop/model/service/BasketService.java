@@ -34,12 +34,10 @@ public class BasketService {
                     UUID id = entry.getKey();
                     int quantity = entry.getValue();
                     Product product = storageService.getProductById(id)
-                            .orElseThrow(() ->new NoSuchProductException("Продукт с id: " + id + " не найден."));
+                            .orElseThrow(() -> new NoSuchProductException("Продукт с id: " + id + " не найден."));
                     return new BasketItem(product, quantity);
                 })
                 .toList();
         return new UserBasket(items);
     }
-
-
 }
